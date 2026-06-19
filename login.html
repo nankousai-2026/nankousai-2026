@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>管理者ログイン | 南高祭2026</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#f4f6fb;
+
+    font-family:sans-serif;
+}
+
+.login-box{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.15);
+
+    width:350px;
+
+    text-align:center;
+}
+
+h1{
+
+    color:#00469b;
+
+    margin-bottom:30px;
+}
+
+input{
+
+    width:100%;
+
+    padding:15px;
+
+    font-size:1rem;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    box-sizing:border-box;
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#00469b;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+
+    background:#00357a;
+}
+
+.error{
+
+    color:red;
+
+    margin-top:15px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="login-box">
+
+    <h1>管理者ログイン</h1>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="パスワード">
+
+<input
+    type="text"
+    id="studentId"
+    placeholder="4桁番号">
+
+    <button onclick="login()">
+        ログイン
+    </button>
+
+    <div class="error" id="error"></div>
+
+</div>
+
+<script>
+
+function login(){
+
+    const pass =
+        document.getElementById("password").value;
+
+    const studentId =
+        document.getElementById("studentId").value;
+
+    const validIds = [
+
+        "1140",
+        "1107",
+        "1112",
+        "1208",
+        "1205",
+        "1210",
+        "1336",
+        "1315",
+        "1327",
+        "1407",
+        "1401",
+        "1413",
+        "1517",
+        "1513",
+        "1534",
+        "1616",
+        "1609",
+        "1622",
+        "1737",
+        "1726",
+        "1730",
+        "1813",
+        "1805",
+        "1807",
+        "2108",
+        "2119",
+        "2121",
+        "2227",
+        "2219",
+        "2233",
+        "2322",
+        "2311",
+        "2330",
+        "2426",
+        "2405",
+        "2425",
+        "2533",
+        "2519",
+        "2527",
+        "2613",
+        "2604",
+        "2612",
+        "2720",
+        "2705",
+        "2728",
+        "2814",
+        "2807",
+        "2834",
+        "3109",
+        "3103",
+        "3115",
+        "3232",
+        "3219",
+        "3221",
+        "3303",
+        "3335",
+        "3339",
+        "3437",
+        "3425",
+        "3430",
+        "3525",
+        "3505",
+        "3523",
+        "3613",
+        "3609",
+        "3629",
+        "3706",
+        "3814",
+        "3809",
+        "3829",
+        "1122",
+        "2521",
+        "3418",
+        "3430",
+        "2337",
+        "2728",
+        "3420",
+        "3823",
+        "2511",
+        "3206",
+        "3516",
+        "3832",
+        "2328",
+        "2736",
+        "3629",
+        "2606",
+        "3208",
+        "3731",
+        "2726",
+        "3516",
+        "3835",
+        "1110",
+        "2611",
+        "3115",
+        "3321",
+        "3521",
+        "3729",
+        "3818",
+        "2339",
+        "2722",
+        "3203",
+        "3435",
+        "3532",
+        "3731",
+        "2527",
+        "3114",
+        "3302",
+        "3511",
+        "3712",
+        "3814",
+        "2901",
+        
+
+    ];
+
+    if(
+        pass === "nankou2026" &&
+        validIds.includes(studentId)
+    ){
+
+        localStorage.setItem(
+            "adminLogin",
+            "true"
+        );
+
+        location.href = "admin.html";
+
+    }else{
+
+        document.getElementById("error")
+            .innerText =
+            "パスワードまたは番号が違います";
+    }
+}
+
+</script>
+
+</body>
+</html>
