@@ -191,7 +191,7 @@
 
     // --- 以下の関数は onload の外側に配置 ---
     function addCategoryMarker(map, y, x, category, name, className, url) {
-        const icons = { 'food': '🍴', 'shop': '🛍️', 'attraction': '🎡', 'event': '⭐️', 'exhibition': '📖', 'music': '♪', 'stage': '🎥' ,'ghost':'👻'};
+        const icons = { 'food': '🍴', 'shop': '🛍️', 'attraction': '🎡', 'event': '⭐️', 'exhibition': '📖', 'music': '♪', 'stage': '🎥' ,'ghost':'👻', 'stamp':'💮'};
         const myIcon = L.divIcon({ className: 'custom-pin', html: `<div class="pin-icon">${icons[category] || '📍'}</div>`, iconSize: [40, 40], iconAnchor: [20, 45] });
         const marker = L.marker([y, x], { icon: myIcon }).addTo(map);
         markerList.push({ marker, className });
@@ -233,6 +233,7 @@ addCategoryMarker(maps[0], 800, 550, 'attraction', '書道部', '書道部', 'de
 addCategoryMarker(maps[0], 750, 300, 'food', 'ジュース', '1年2組', 'detail.html');
 addCategoryMarker(maps[0], 750, 800, 'event', 'ストリート発表', '有志団体', 'street.html');
 addCategoryMarker(maps[0], 250, 300, 'event', 'ステージ発表', '有志団体', 'stage.html');
+addCategoryMarker(maps[0], 100, 1000, 'shop', 'バット販売', '六華同窓会', 'detail.html');
 
 addCategoryMarker(maps[1], 450, 450, 'exhibition', '生物研究会', '生物研究会', 'detail.html');
 addCategoryMarker(maps[1], 650, 450, 'exhibition', '科学部', '科学部', 'detail.html');
@@ -241,6 +242,7 @@ addCategoryMarker(maps[1], 780, 750, 'exhibition', '華道部', '華道部', 'ka
 addCategoryMarker(maps[1], 700, 700, 'shop', 'うちわ販売', '執行委員会', 'detail.html');
 addCategoryMarker(maps[1], 800, 550, 'attraction', '茶道部', '茶道部', 'detail.html');
 addCategoryMarker(maps[1], 450, 900, 'attraction', 'プログラミング研究会', 'プログラミング研究会', 'detail.html');
+addCategoryMarker(maps[1], 750, 650, 'stamp', 'スタンプラリー', '執行委員会', 'detail.html');
 
 addCategoryMarker(maps[2], 200, 750, 'music', 'Mオケ', '吹奏楽部', 'detail.html');
 addCategoryMarker(maps[2], 800, 250, 'attraction', 'ジュラシック・ワールド/南の大地', '3年5組', 'detail.html');
@@ -252,6 +254,7 @@ addCategoryMarker(maps[2], 810, 875, 'ghost', '佐々木屋敷', '1年4組', 'de
 addCategoryMarker(maps[2], 740, 970, 'attraction', 'cafe. KOREYA', '1年3組', 'detail.html');
 addCategoryMarker(maps[2], 800, 1080, 'food', '煩悩寺の変', '1年8組', 'detail.html');
 addCategoryMarker(maps[2], 750, 1200, 'food', 'BAR♤BAR', '1年7組', 'detail.html');
+addCategoryMarker(maps[2], 650, 750, 'stamp', 'スタンプラリー', '執行委員会', 'detail.html');
 
 addCategoryMarker(maps[3], 500, 1200, 'attraction', '御神馬の暴走', '3年4組', 'detail.html');
 addCategoryMarker(maps[3], 550, 1050, 'food', 'タピなん', '2年2組', 'detail.html');
@@ -262,6 +265,7 @@ addCategoryMarker(maps[3], 510, 650, 'food', 'ワッフる？', '2年5組', 'det
 addCategoryMarker(maps[3], 490, 550, 'attraction', 'JOY STORY AQUA!', '2年6組', 'detail.html');
 addCategoryMarker(maps[3], 470, 450, 'food', 'You’re John', '2年8組', 'detail.html');
 addCategoryMarker(maps[3], 400, 300, 'attraction', '海底308万マイル', '3年8組', 'detail.html');
+addCategoryMarker(maps[3], 350, 700, 'stamp', 'スタンプラリー', '執行委員会','detail.html');
 
 addCategoryMarker(maps[4], 500, 1200, 'ghost', '黎明饗宴', '3年7組', 'detail.html');
 addCategoryMarker(maps[4], 450, 325, 'ghost', '記鐿(きろく/きおく)', '3年2組', 'detail.html');
@@ -269,6 +273,7 @@ addCategoryMarker(maps[4], 500, 450, 'food', 'メイドの土産101', '1年1組'
 addCategoryMarker(maps[4], 500, 1050, 'exhibition', '語学・言語学研究会', '語学・言語学研究会', 'detail.html');
 addCategoryMarker(maps[4], 500, 550, 'attraction', 'よろずや同好会', 'よろずや同好会', 'detail.html');
 addCategoryMarker(maps[4], 450, 650, 'attraction', 'クイズ研究会', 'クイズ研究会', 'detail.html');
+addCategoryMarker(maps[4], 400, 750, 'stamp', 'スタンプラリー', '執行委員会', 'detail.html');
     }
 
     window.showFloor = function(index) {
