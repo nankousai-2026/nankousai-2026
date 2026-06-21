@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>スタンプラリー詳細 | 南高祭2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'M PLUS Rounded 1c', sans-serif; }
+        .yuji { font-family: 'Yuji Syuku', serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-white min-h-screen">
+
+    <!-- ヘッダー -->
+    <header class="p-6 flex justify-between items-center bg-slate-800/50 backdrop-blur sticky top-0 z-50 border-b border-white/10">
+        <a href="index.html" class="yuji text-2xl font-bold">南高祭 2026</a>
+        <button id="menu-btn" class="text-2xl p-2 z-50">☰</button>
+    </header>
+
+    <!-- メニュー -->
+    <nav id="menu" class="hidden absolute top-20 right-4 w-48 bg-slate-800 rounded-2xl shadow-xl overflow-hidden z-40 border border-white/10">
+        <a href="index.html" class="block p-4 hover:bg-white/10">ホーム</a>
+        <a href="access.html" class="block p-4 hover:bg-white/10">交通アクセス</a>
+        <a href="stage.html" class="block p-4 hover:bg-white/10">ステージ発表</a>
+        <a href="exhibition.html" class="block p-4 hover:bg-white/10">展示一覧</a>
+        <a href="street.html" class="block p-4 hover:bg-white/10">ストリート発表</a>
+        <a href="map.html" class="block p-4 hover:bg-white/10">会場マップ</a>
+        <a href="maigo.html" class="block p-4 hover:bg-white/10">迷子・落とし物</a>
+        <a href="rally.html" class="block p-4 hover:bg-white/10 bg-white/5">スタンプラリー</a>
+        <a href="rule.html" class="block p-4 hover:bg-white/10">校内ルール</a>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <h1 class="yuji text-4xl text-center mb-10 text-yellow-300">校内スタンプラリー開催！</h1>
+
+        <!-- ラリー概要 -->
+        <section class="bg-white/5 p-8 rounded-3xl border border-white/10 mb-8 shadow-lg">
+            <h2 class="text-xl font-bold mb-4 border-b border-blue-500 pb-2 text-blue-300">ラリー概要</h2>
+            <p class="leading-relaxed">南高祭を遊び尽くせ！校内の各階ホールと第二体育館に設置されたスタンプを集めよう！すべて集めると、第二体育館にて<span class="text-orange-400 font-bold">「ミニゲーム挑戦権」</span>が手に入ります。</p>
+        </section>
+
+        <!-- 参加の流れ -->
+        <section class="bg-white/5 p-8 rounded-3xl border border-white/10 mb-8 shadow-lg">
+            <h2 class="text-xl font-bold mb-6 border-b border-blue-500 pb-2 text-blue-300">参加の流れ</h2>
+            <div class="grid gap-4">
+                <div class="p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded-r-lg">1. 各階ホールと第二体育館を巡り、スタンプをすべて押す。</div>
+                <div class="p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded-r-lg">2. コンプリートした台紙を第二体育館の受付へ持っていく。</div>
+                <div class="p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded-r-lg">3. 体育館内の特設会場でミニゲームに挑戦！</div>
+                <div class="p-4 bg-blue-900/20 border-l-4 border-blue-500 rounded-r-lg">4. 成績に応じて豪華景品をゲット！</div>
+            </div>
+        </section>
+
+        <!-- 注意事項 -->
+        <section class="bg-white/5 p-8 rounded-3xl border border-white/10 shadow-lg">
+            <h2 class="text-xl font-bold mb-4 border-b border-blue-500 pb-2 text-blue-300">注意事項</h2>
+            <ul class="list-disc list-inside space-y-2 text-slate-300">
+                <li>台紙は各階受付で配布しています。</li>
+                <li>スタンプラリーの景品は数に限りがあります。</li>
+                <li>ゲームへの挑戦はコンプリートした台紙1枚につき1回までです。</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+
+        // メニューボタンのクリックで表示/非表示を切り替え
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('hidden');
+        });
+
+        // 画面の他の場所をクリックしたらメニューを閉じる
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
